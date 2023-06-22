@@ -8,7 +8,10 @@ router.get('/', sneakersCtrl.index);
 router.get('/new', sneakersCtrl.new);
 // GET /sneakers/:id
 router.get('/:id', sneakersCtrl.show);
+// GET /sneakers/:id/edit
+router.get('/:id/edit', sneakersCtrl.edit);
 // POST /sneakers
 router.post('/', sneakersCtrl.create);
+
 
 module.exports = router;

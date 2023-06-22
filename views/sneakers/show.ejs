@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-<h2><%=  sneaker.model %></h2>
+<h2><%= sneaker.model %></h2>
 <h3><%= sneaker.name %></h3>
-<img src="<%= sneaker.image %>" alt="<%=  sneaker.model %> - <%= sneaker.name %> image">
+<img src="<%= sneaker.image %>" alt="<%= sneaker.model %> - <%= sneaker.name %> image">
 <h4><%= sneaker.color %></h4>
 <h4><%= sneaker.release %></h4>
 <h4><%= sneaker.retail %></h4>
 <h4><%= sneaker.sku %></h4>
+
+<a href="/sneakers/<%= sneaker.id %>/edit">Edit Sneaker</a>
 
 <%- include('../partials/footer') %>
