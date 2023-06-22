@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h1><%= title %></h1>
 <table>
   <thead>
     <tr>
@@ -12,7 +13,7 @@
   <tbody>
     <% sneakers.forEach((s) => { %>
     <tr>
-      <td><%= s.model %></td>
+      <td><a href="/sneakers/<%= s.id %>"><%= s.model %></a></td>
       <td><%= s.name %></td>
       <td><%= s.colorway %></td>
       <td><%= s.released %></td>

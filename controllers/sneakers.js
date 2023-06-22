@@ -19,9 +19,19 @@ const create = async (req, res) => {
   };
 };
 
+const show = (req, res) => {
+  Sneaker.findById(req.params.id).then((sneaker) => {
+    res.render('sneakers/show', {
+      sneaker,
+      title: 'Sneaker Details'
+    })
+  });
+};
+
 
 module.exports = {
   index,
   new: newSneaker,
-  create
+  create,
+  show
 }
