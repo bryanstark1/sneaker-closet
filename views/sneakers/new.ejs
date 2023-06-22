@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<form action="/sneakers" method="POST">
+  <label>Model
+    <input type="text" name="model">
+  </label>
+  <label>Name
+    <input type="text" name="name">
+  </label>
+  <label>Colorway
+    <input type="text" name="color">
+  </label>
+  <label>Release Date
+    <input type="text" name="release">
+  </label>
+  <label>Retail Price
+    <input type="text" name="retail">
+  </label>
+  <label>SKU Number
+    <input type="text" name="sku">
+  </label>
+  <label>Image URL
+    <input type="text" name="image">
+  </label>
+  <button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

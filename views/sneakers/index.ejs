@@ -1,3 +1,25 @@
 <%- include('../partials/header') %>
 
+<table>
+  <thead>
+    <tr>
+      <td>Model</td>
+      <td>Name</td>
+      <td>Colorway</td>
+      <td>Released</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% sneakers.forEach((s) => { %>
+    <tr>
+      <td><%= s.model %></td>
+      <td><%= s.name %></td>
+      <td><%= s.colorway %></td>
+      <td><%= s.released %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="/sneakers/new">Add New Sneaker</a>
 <%- include('../partials/footer') %>
