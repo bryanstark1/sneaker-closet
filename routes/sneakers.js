@@ -12,6 +12,8 @@ router.get('/:id', sneakersCtrl.show);
 router.get('/:id/edit', sneakersCtrl.edit);
 // POST /sneakers
 router.post('/', sneakersCtrl.create);
+// PUT /sneakers/:id
+router.put('/:id', sneakersCtrl.update);
 
 
 module.exports = router;

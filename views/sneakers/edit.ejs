@@ -1,29 +1,30 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-<form action="/sneakers" method="POST">
+<form action="/sneakers/<%= sneaker.id %>?_method=PUT" method="POST">
   <label>Model
-    <input type="text" name="model" value="<%= sneaker.model %>">
+    <input type="text" name="model" placeholder="Sneaker Brand & Model" value="<%= sneaker.model %>">
   </label>
   <label>Name
-    <input type="text" name="name" value="<%= sneaker.name %>">
+    <input type="text" name="name" placeholder="Sneaker Nickname" value="<%= sneaker.name %>">
   </label>
   <label>Colorway
-    <input type="text" name="color" value="<%= sneaker.color %>">
+    <input type="text" name="color" placeholder="Color Combination" value="<%= sneaker.color %>">
   </label>
   <label>Release Date
-    <input type="text" name="release" value="<%= sneaker.release %>">
+    <input type="date" name="release" value="<%= sneaker.release %>">
   </label>
   <label>Retail Price
-    <input type="text" name="retail" value="<%= sneaker.retail %>">
+    <input type="number" name="retail" placeholder="0" value="<%= sneaker.retail %>">
   </label>
   <label>SKU Number
     <input type="text" name="sku" value="<%= sneaker.sku %>">
   </label>
   <label>Image URL
-    <input type="text" name="image" value="<%= sneaker.image %>">
+    <input type="text" name="image" placeholder="Link to image URL" value="<%= sneaker.image %>">
   </label>
   <button type="submit">Submit</button>
+  <button type="reset">Reset Form</button>
 </form>
 
 <%- include('../partials/footer') %>

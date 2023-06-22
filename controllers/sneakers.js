@@ -46,11 +46,24 @@ const edit =(req, res) => {
   });
 };
 
+const update = async (req, res) => {
+  try {
+    await Sneaker.findByIdAndUpdate(req.params.id, req.body, {new:true});
+    res.redirect(`/sneakers/${req.params.id}`);
+  } catch (err) {
+    res.render(`/sneakers/${req.params.id}/edit`, {
+      errorMsg: err.message,
+      title: 'Edit Sneaker'
+    });
+  };
+};
+
 
 module.exports = {
   index,
   new: newSneaker,
   create,
   show,
-  edit
+  edit,
+  update
 }
