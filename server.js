@@ -44,3 +44,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+app.get('/', (req, res) => {
+  res.send('hi');
+})
