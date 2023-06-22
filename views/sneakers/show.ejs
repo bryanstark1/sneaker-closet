@@ -10,5 +10,8 @@
 <h4><%= sneaker.sku %></h4>
 
 <a href="/sneakers/<%= sneaker.id %>/edit">Edit Sneaker</a>
+<form action="/sneakers/<%= sneaker.id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete Sneaker</button>
+</form>
 
 <%- include('../partials/footer') %>

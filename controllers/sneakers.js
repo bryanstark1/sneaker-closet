@@ -58,6 +58,18 @@ const update = async (req, res) => {
   };
 };
 
+const deleteSneaker = async (req, res) => {
+  try {
+    await Sneaker.findByIdAndRemove(req.params.id);
+    res.redirect('/sneakers');
+  } catch (err) {
+    res.render(`/sneakers/${req.params.id}`, {
+      errorMsg: err.message,
+      title: 'Sneaker Details'
+    });
+  };
+};
+
 
 module.exports = {
   index,
@@ -65,5 +77,6 @@ module.exports = {
   create,
   show,
   edit,
-  update
+  update,
+  delete: deleteSneaker
 }

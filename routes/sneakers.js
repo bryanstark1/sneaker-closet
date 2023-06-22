@@ -14,6 +14,8 @@ router.get('/:id/edit', sneakersCtrl.edit);
 router.post('/', sneakersCtrl.create);
 // PUT /sneakers/:id
 router.put('/:id', sneakersCtrl.update);
+// DELETE /sneakers/:id
+router.delete('/:id', sneakersCtrl.delete);
 
 
 module.exports = router;
