@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-<form action="/sneakers/<%= sneaker.id %>?_method=PUT" method="POST">
+<form action="/sneakers/<%= sneaker.id %>?_method=PUT" method="POST" class="sneaker-form">
   <label>Model
     <input type="text" name="model" placeholder="Sneaker Brand & Model" value="<%= sneaker.model %>">
   </label>
@@ -23,8 +23,10 @@
   <label>Image URL
     <input type="text" name="image" placeholder="Link to image URL" value="<%= sneaker.image %>">
   </label>
-  <button type="submit">Submit</button>
-  <button type="reset">Reset Form</button>
+  <div class="btn-container">
+    <button type="submit" class="button">Submit</button>
+    <button type="reset" class="button">Reset Form</button>
+  </div>
 </form>
 
 <%- include('../partials/footer') %>

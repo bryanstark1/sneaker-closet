@@ -1,12 +1,15 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-<form action="/sneakers" method="POST">
+
+<p class="tip">Reference <a href="https://thesneakerdatabase.com/sneakers" style="text-decoration: underline" target="_blank">The Sneaker Database</a> for accurate sneaker data!</p>
+
+<form action="/sneakers" method="POST" class="sneaker-form">
   <label>Model
-    <input type="text" name="model" placeholder="Sneaker Brand & Model">
+    <input type="text" name="model" placeholder="Brand & Model (ex: Air Jordan 1 High)">
   </label>
   <label>Name
-    <input type="text" name="name" placeholder="Sneaker Nickname">
+    <input type="text" name="name" placeholder="Nickname (ex: Chicago)">
   </label>
   <label>Colorway
     <input type="text" name="color" placeholder="Color Combination">
@@ -23,9 +26,10 @@
   <label>Image URL
     <input type="text" name="image" placeholder="Link to image URL">
   </label>
-  <button type="submit">Submit</button>
+  <div class="btn-container">
+    <button type="submit" class="button">Submit</button>
+    <button type="reset" class="button">Reset Form</button>
+  </div>
 </form>
-
-<p><%= err.message %></p>
 
 <%- include('../partials/footer') %>

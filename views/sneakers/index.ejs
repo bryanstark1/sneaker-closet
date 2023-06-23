@@ -1,26 +1,27 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
 <table>
   <thead>
     <tr>
-      <td>Model</td>
-      <td>Name</td>
-      <td>Colorway</td>
-      <td>Released</td>
+      <th></th>
+      <th>Model</th>
+      <th>Name</th>
+      <th>Colorway</th>
+      <th>Released</th>
     </tr>
   </thead>
   <tbody>
     <% sneakers.forEach((s) => { %>
     <tr>
+      <td><img src="<%= s.image %>" alt="icon"></td>
       <td><a href="/sneakers/<%= s.id %>"><%= s.model %></a></td>
-      <td><%= s.name %></td>
-      <td><%= s.colorway %></td>
-      <td><%= s.released %></td>
+      <td><a href="/sneakers/<%= s.id %>"><%= s.name %></a></td>
+      <td><%= s.color %></td>
+      <td><%= s.release.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %></td>
     </tr>
     <% }) %>
   </tbody>
 </table>
 
-<a href="/sneakers/new">Add New Sneaker</a>
+<a href="/sneakers/new" class="button alone">Add New Sneaker</a>
 <%- include('../partials/footer') %>

@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
-
-<h1><%= title %></h1>
-<h2><%= sneaker.model %></h2>
-<h3><%= sneaker.name %></h3>
-<img src="<%= sneaker.image %>" alt="<%= sneaker.model %> - <%= sneaker.name %> image">
-<h4><%= sneaker.color %></h4>
-<h4><%= sneaker.release %></h4>
-<h4><%= sneaker.retail %></h4>
-<h4><%= sneaker.sku %></h4>
-
-<a href="/sneakers/<%= sneaker.id %>/edit">Edit Sneaker</a>
-<form action="/sneakers/<%= sneaker.id %>?_method=DELETE" method="POST">
-  <button type="submit">Delete Sneaker</button>
-</form>
-
+<div class="detail">
+  <h1><%= sneaker.model %></h1>
+  <h1><%= sneaker.name %></h1>
+  <img src="<%= sneaker.image %>" alt="<%= sneaker.model %> - <%= sneaker.name %> image">
+  <h3><%= sneaker.color %></h3>
+  <h3><%= sneaker.release.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %></h4>
+  <h3>Original MSRP: $<%= sneaker.retail %></h3>
+  <h3><%= sneaker.sku %></h3>
+  <div class="btn-container">
+    <a href="/sneakers/<%= sneaker.id %>/edit" class="button">Edit Sneaker</a>
+    <form action="/sneakers/<%= sneaker.id %>?_method=DELETE" method="POST">
+      <button type="submit" class="button">Delete Sneaker</button>
+    </form>
+  </div>
+</div>
 <%- include('../partials/footer') %>

@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+// To be populated with data from https://thesneakerdatabase.com/sneakers
+
 const sneakerSchema = new Schema({
   model: {
     type: String,
