@@ -13,6 +13,8 @@ TECH
 
 2. Instead of auto deleting on Delete button click, I wanted a modal to prompt the user to confirm before deleting.
 
+- Referenced https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up to understand how to disable the page under the modal while the modal is open. Requiring a choice of either "Cancel" or "Confirm Delete".
+
 - Issue with console/element flickering when trying to toggle the display from flex to none. Needed to implement event.preventDefault()
 https://stackoverflow.com/questions/55889300/my-javascript-output-flashes-for-a-second-and-then-disappears
 

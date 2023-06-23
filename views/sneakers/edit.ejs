@@ -1,6 +1,9 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
+
+<p class="tip">Reference <a href="https://thesneakerdatabase.com/sneakers" style="text-decoration: underline" target="_blank">The Sneaker Database</a> for accurate sneaker data!</p>
+
 <form action="/sneakers/<%= sneaker.id %>?_method=PUT" method="POST" class="sneaker-form">
   <label>Model
     <input type="text" name="model" placeholder="Sneaker Brand & Model" value="<%= sneaker.model %>">
@@ -11,8 +14,19 @@
   <label>Colorway
     <input type="text" name="color" placeholder="Color Combination" value="<%= sneaker.color %>">
   </label>
+  <% const year = sneaker.release.getFullYear(); %>
+  <% let month = sneaker.release.getMonth(); %>
+  <% if (month <= 8 ) { %>
+  <% month = ('0' + (month + 1)); %>
+  <% } else { %>
+  <% month = (month + 1); %>
+  <% }; %>
+  <% let day = sneaker.release.getDate(); %>
+  <% if (day < 10) { %>
+  <% day = '0' + day %>
+  <% }; %>
   <label>Release Date
-    <input type="date" name="release" value="<%= sneaker.release %>">
+    <input type="date" name="release" value="<%= year %>-<%= month %>-<%= day %>">
   </label>
   <label>Retail Price
     <input type="number" name="retail" placeholder="0" value="<%= sneaker.retail %>">

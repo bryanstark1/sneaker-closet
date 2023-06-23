@@ -219,6 +219,19 @@ img {
 }
 
 #delete-prompt {
+  /* https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128,128,128,0.5);
+  display: none;
+  justify-content: center;
+}
+
+.delete-modal {
+  display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 99;
@@ -226,7 +239,6 @@ img {
   background: white;
   padding: 5rem;
   top: 40%;
-  display: none;
 }
 
 .display-flex {
