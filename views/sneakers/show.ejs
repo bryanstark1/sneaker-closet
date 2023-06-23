@@ -8,10 +8,20 @@
   <h3>Original MSRP: $<%= sneaker.retail %></h3>
   <h3><%= sneaker.sku %></h3>
   <div class="btn-container">
-    <a href="/sneakers/<%= sneaker.id %>/edit" class="button">Edit Sneaker</a>
-    <form action="/sneakers/<%= sneaker.id %>?_method=DELETE" method="POST">
-      <button type="submit" class="button">Delete Sneaker</button>
+    <a href="/sneakers/<%= sneaker.id %>/edit" class="button page-button">Edit Sneaker</a>
+    <form>
+      <button type="submit" class="button page-button" id="prompt-button">Delete Sneaker</button>
     </form>
+    <div id="delete-prompt">
+      <p>Are you sure you want to delete this sneaker?</p>
+      <p>This can't be undone.</p>
+      <div class="btn-container">
+      <a class="button" id="cancel-button">Cancel</a>
+        <form action="/sneakers/<%= sneaker.id %>?_method=DELETE" method="POST">
+          <button type="submit" class="button page-button">Delete Sneaker</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 <%- include('../partials/footer') %>
