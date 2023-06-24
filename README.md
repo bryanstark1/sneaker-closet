@@ -9,15 +9,23 @@ This app compiles a list of sneaker that you can add on your own. The "My Closet
 
 TECH
 
-1. Reset Form buttons - Noticed these while researching input types on W3Schools. Decided that implementing them would provide useful functionality in the New and Edit forms.
+1. Reset Form buttons - Noticed these while researching input types on W3Schools. Decided that implementing them would provide useful functionality in the New and Edit forms. The functinoality is applied by simply adding an input type attribute with a value of "reset" to the button element. The button will only reset values in input fields that have been manually entered by a user. If the input field value was initially set by a value attribute, like on the Edit Sneaker page, the reset button will not clear the field - However, it will reset it back to the value attribute's value if the user has altered the value in the input field.
 
-2. Instead of auto deleting on Delete button click, I wanted a modal to prompt the user to confirm before deleting.
+2. Instead of immediately deleting a sneaker upon clicking the "Delete Sneaker" button, I wanted a modal to prompt the user to confirm before deleting. I utilized some simple DOM manipulation with vanilla JS in order to achieve the proper effect. The modal now opens on the "Delete Sneaker" button click, the "Confirm Delete" button in the modal is what will trigger the sneaker to be removed from the database, and the user redirection back to the list of all sneakers.
 
-- Referenced https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up to understand how to disable the page under the modal while the modal is open. Requiring a choice of either "Cancel" or "Confirm Delete".
+By placing the element used for the modal within another div (#delete-prompt) that covered the entire page, I was able to prevent the user from clicking on anything underneath the modal while it's open. Forcing the user to either cancel the delete request to close the modal, or confirm the delete. In order for this to work properly, the #delete-prompt div needed certain CSS properties like:
+height: 100vh;
+width: 100vw;
+position: fixed;
+
+- Referenced https://stackoverflow.com/questions/45607982/how-to-disable-background-when-modal-window-pops-up to understand how to disable the page under the modal while the modal is open.
 
 - Issue with console/element flickering when trying to toggle the display from flex to none. Needed to implement event.preventDefault()
 https://stackoverflow.com/questions/55889300/my-javascript-output-flashes-for-a-second-and-then-disappears
 
+
+3. Mobile Menu - Utilized a hamburger style menu button that when clicked, triggers a JQuery slideToggle animation. The menu initially pushed all page content below it futher down upon opening. In order to remedy this, I applied the following CSS properties to the header element acting as a container for it all: position: absolute;
+width: 100%;
 
 
 

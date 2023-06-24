@@ -37,7 +37,7 @@ const show = (req, res) => {
   });
 };
 
-const edit =(req, res) => {
+const edit = (req, res) => {
   Sneaker.findById(req.params.id).then((sneaker) => {
     res.render('sneakers/edit', {
       sneaker,

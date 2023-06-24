@@ -318,7 +318,7 @@ tbody > tr > td > img {
     width: 100%;
   }
 
- nav {
+  nav {
     display: none;
   }
 
@@ -363,13 +363,15 @@ tbody > tr > td > img {
     margin: 0 0 0 1rem;
   }
 
-
-
   #hamburger {
     display: block;
     align-self: flex-end;
     color: gold;
     margin: 1rem;
+  }
+
+  #hamburger:active {
+    box-shadow: inset 0px 1px 10px 0px rgba(0,0,0,.2);
   }
 
 
