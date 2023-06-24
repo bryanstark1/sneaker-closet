@@ -23,7 +23,7 @@ const sneakerSchema = new Schema({
   },
   retail: {
     type: Number,
-    default: '100'
+    default: '0'
   },
   image: {
     type: String, 
