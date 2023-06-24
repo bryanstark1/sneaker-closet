@@ -1,3 +1,7 @@
+<%- include('../partials/head') %>
+
+</head>
+
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
@@ -6,22 +10,22 @@
 
 <form action="/sneakers" method="POST" class="sneaker-form">
   <label>Model
-    <input type="text" name="model" placeholder="Brand & Model (ex: Air Jordan 1 High)">
+    <input type="text" name="model" placeholder="Brand & Model (ex: Air Jordan 1 High)" required>
   </label>
   <label>Name
-    <input type="text" name="name" placeholder="Nickname (ex: Chicago)">
+    <input type="text" name="name" placeholder="Nickname (ex: Chicago)" required>
   </label>
   <label>Colorway
-    <input type="text" name="color" placeholder="Color Combination">
+    <input type="text" name="color" placeholder="Color Combination" required>
   </label>
   <label>Release Date
-    <input type="date" name="release" value="1985-04-01">
+    <input type="date" name="release" value="1985-04-01" required>
   </label>
   <label>Retail Price
-    <input type="number" name="retail" placeholder="0">
+    <input type="number" name="retail" placeholder="0" required>
   </label>
   <label>SKU Number
-    <input type="text" name="sku">
+    <input type="text" name="sku" required>
   </label>
   <label>Image URL
     <input type="text" name="image" placeholder="Link to image URL">

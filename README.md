@@ -23,10 +23,35 @@ https://stackoverflow.com/questions/55889300/my-javascript-output-flashes-for-a-
 
 ISSUES
 
-1. Issue with date format on show pages. Chrome is displaying the date of the before the release date that is stored in the database for each sneaker. (If a release date is 4/1/2017, Chrome displays 3/31/2017)
+1. Issue with date format on show pages. Chrome is displaying the date of day the before the release date that is stored in the database for each sneaker. (If a release date is 4/1/2017, Chrome displays 3/31/2017)
 
-- This issue was fixed upon deploying to Heroku. Issue seems to have been specific to local host in browser.
+- This issue was fixed upon deploying to Heroku. Issue was related to time zones and seems to have been specific to local host in browser.
 
-2. Issue on edit page, date value isn't automatically filling in the input element on the edit page.
+2. Issue on edit page, date value isn't automatically filling in the input element on the edit page. Prevents user from editing a sneaker without manually reselecting the Release Date.
+
+- Fixed by changing:
+
+  <label>Release Date
+    <input type="date" name="release" value="<%= sneaker.release %>">
+  </label>
+
+  To:
+
+  <% const year = sneaker.release.getFullYear(); %>
+  <% let month = sneaker.release.getMonth(); %>
+  <% if (month <= 8 ) { %>
+    <% month = ('0' + (month + 1)); %>
+  <% } else { %>
+    <% month = (month + 1); %>
+  <% }; %>
+  <% let day = sneaker.release.getDate(); %>
+  <% if (day <= 8 ) { %>
+    <% day = ('0' + (day + 1)); %>
+  <% } else { %>
+    <% day = (day + 1); %>
+  <% }; %>
+  <label>Release Date
+    <input type="date" name="release" value="<%= year %>-<%= month %>-<%= day %>">
+  </label>
 
 3. Including '$' dollar sign in the input fields for the New and Edit pages.
