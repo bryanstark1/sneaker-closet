@@ -2,8 +2,6 @@
 // ============ Header Mobile Menu ============
 // ============================================
 
-// event.preventDefault();
-
 $(() => {
   $('#hamburger').on('click', () => {
     $('#menu').slideToggle();

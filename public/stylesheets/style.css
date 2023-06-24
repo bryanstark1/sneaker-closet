@@ -42,20 +42,21 @@ header {
 
 nav > ul {
   display: flex;
+  justify-content: space-evenly;
   list-style: none;
   padding: 0;
-  width: 100%;
-  gap: 7rem;
+  width: 100vw;
 }
 
 nav > ul > li > a {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: gold;
 }
 
 .hamburger-container {
   display: none
 }
+
 
 
 
@@ -104,10 +105,11 @@ nav > ul > li > a {
 */
 
 table {
-  margin: 3rem;
+  margin: 1rem 3rem 0 3rem;
   border-collapse: collapse;
   box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
   background-color: papayawhip;
+  border-radius: 10px;
 }
 
 thead {
@@ -133,8 +135,8 @@ tbody > tr > td {
 }
 
 tbody > tr > td > img {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 
 
@@ -189,6 +191,7 @@ tbody > tr > td > img {
   box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   cursor: pointer;
+  font-size: 1.25rem;
 }
 
 .button:hover {
@@ -204,7 +207,7 @@ tbody > tr > td > img {
   width: fit-content;
   display: flex;
   align-self: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0 1rem 0;
 }
 
 .tip {
@@ -219,9 +222,10 @@ tbody > tr > td > img {
 ===============================================================
 */
 
-img {
+.detail > img {
   height: 500px;
   width: 500px;
+  margin: -3rem 0 -3rem 0;
 }
 
 .detail {
@@ -237,6 +241,10 @@ img {
 
 .detail > h3 {
   margin: .75rem;
+}
+
+.detail > .btn-container {
+  margin-top: 3rem;
 }
 
 #delete-prompt {
@@ -258,13 +266,34 @@ img {
   z-index: 99;
   position: absolute;
   background: white;
-  padding: 5rem;
-  top: 40%;
+  padding: 4rem;
+  top: 30%;
+  border-radius: 10px;
+  background-color: papayawhip;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
+}
+
+.delete-modal > p {
+  font-size: 1rem;
+}
+
+.delete-modal > .btn-container {
+  justify-content: space-between;
 }
 
 .display-flex {
   display: flex;
 }
+
+
+
+
+
+/* 
+===============================================================
+====================== MEDIA QUERIES ==========================
+===============================================================
+*/
 
 
 @media only screen and (min-width: 768px) {
@@ -276,6 +305,11 @@ img {
 
 
 @media only screen and (max-width: 768px) {
+  /* 
+  ==============================================================
+  ========================= HEADER =============================
+  ==============================================================
+  */
   header {
     flex-direction: column;
     position: absolute;
@@ -289,16 +323,42 @@ img {
   nav > ul {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    margin: 2rem 0;
+    margin: 0;
+  }
+
+  nav > ul > li {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+  }
+
+  nav > ul > li > a {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
   }
 
   .hamburger-container {
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0px 1px 10px 0px rgba(0,0,0,.2);
   }
+
+  #title > a {
+    color: gold;
+  }
+
+  #title > a:hover {
+    text-decoration: none;
+  }
+  
+  #title {
+    margin: 0 0 0 1rem;
+  }
+
+
 
   #hamburger {
     display: block;
@@ -308,5 +368,64 @@ img {
   }
 
 
+   /* 
+  ==============================================================
+  ======================= HOME PAGE ============================
+  ==============================================================
+  */
+
+  .index-section > h1 {
+    display: none;
+  }
+
+
+  /* 
+  ==============================================================
+  ========================= TABLES =============================
+  ==============================================================
+  */
+
+  .alone {
+    margin-top: 6rem;
+  }
+
+  table {
+    margin: 1rem;
+  }
+
+  tr > th:nth-of-type(4),
+  tr > td:nth-of-type(4),
+  tr > th:nth-of-type(5),
+  tr > td:nth-of-type(5) {
+    display: none;
+  }
+
+  tbody > tr > td {
+    font-size: 1.25rem;
+  }
+
+  /* 
+  ==============================================================
+  ========================= DETAILS ============================
+  ==============================================================
+  */
+
+  .detail {
+    margin-top: 5rem;
+  }
+
+  .detail > img {
+    height: 350px;
+    width: 350px;
+  }
+
+  .detail > h3 {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    font-size: 1.5rem;
+  }
 
 }
+
