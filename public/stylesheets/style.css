@@ -14,6 +14,7 @@ body {
 h1 {
   display: flex;
   justify-content: center;
+  text-align: center;
   margin: 2rem;
   font-size: 2rem;
 }
@@ -97,6 +98,7 @@ nav > ul > li > a {
 
 .index-section > h2 {
   font-style: italic;
+  text-align: center;
 }
 
 /* 
@@ -246,7 +248,9 @@ tbody > tr > td > img {
 }
 
 .detail > .btn-container {
-  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3rem 0;
 }
 
 #delete-prompt {
@@ -351,7 +355,7 @@ tbody > tr > td > img {
   #title > a {
     color: gold;
     font-family: 'Luckiest Guy', cursive;
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     padding-top: 0.65rem;
   }
 
@@ -381,6 +385,11 @@ tbody > tr > td > img {
   ==============================================================
   */
 
+  .index-section {
+    width: 90%;
+    padding: .5rem;
+  }
+
   .index-section > h1 {
     display: none;
   }
@@ -397,7 +406,7 @@ tbody > tr > td > img {
   }
 
   table {
-    margin: 1rem;
+    margin: .5rem;
   }
 
   tr > th:nth-of-type(4),
@@ -434,6 +443,23 @@ tbody > tr > td > img {
     font-size: 1.5rem;
   }
 
+  .detail > h1:first-of-type {
+    margin: .5rem 2rem;
+  }
+
+  .delete-modal {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .delete-modal > .btn-container {
+    gap: 1rem;
+  }
+
+  .delete-modal .button {
+    font-size: 1.25rem;
+  }
+
 
   /* 
   ==============================================================
@@ -447,6 +473,15 @@ tbody > tr > td > img {
   
   .tip {
     margin-bottom: 3rem;
+    width: 90%;
+  }
+
+  .sneaker-form {
+    width: 90%;
+  }
+
+  .sneaker-form > label {
+    width: 100%;
   }
 
 }

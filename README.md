@@ -62,4 +62,9 @@ ISSUES
     <input type="date" name="release" value="<%= year %>-<%= month %>-<%= day %>">
   </label>
 
-3. Including '$' dollar sign in the input fields for the New and Edit pages.
+
+To Add:
+
+1. Including '$' dollar sign in the input fields for the New and Edit pages.
+
+2. Make entire row of table clickable, instead of just the linked words.
