@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   min-height: 100%;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: darkgrey;
 }
 
@@ -92,6 +92,7 @@ nav > ul > li > a {
 
 .index-section > h1 {
   font-size: 3rem;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 .index-section > h2 {
@@ -208,6 +209,7 @@ tbody > tr > td > img {
   display: flex;
   align-self: center;
   margin: 2rem 0 1rem 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .tip {
@@ -348,6 +350,9 @@ tbody > tr > td > img {
 
   #title > a {
     color: gold;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.75rem;
+    padding-top: 0.65rem;
   }
 
   #title > a:hover {
