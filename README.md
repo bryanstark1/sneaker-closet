@@ -63,51 +63,6 @@ To:
 </label>
 ```
 
-   Because values for Month and Day act like indexes of an array (starting at 0), I needed to increase each of these values by 1. This led to another issue - What if one of these increased values indicates a month or day that doesn't exist? (ex: January 32, February 30, etc). In order to circumvent this issue I had to further modify the JavaScript above to:
-```javascript
-<% let year = sneaker.release.getFullYear(); %>
-<% let month = sneaker.release.getMonth() + 1; %>
-<% let day = sneaker.release.getDate(); %>
-<% if (month === 12) { %>
-  <% if (day === 32) { %>
-    <% month = 1; %>
-    <% day = 1; %>
-    <% year = year + 1; %>
-  <% }; %>
-<% } else if (month === 2) { %>
-  <% if (year % 4 === 0) { %>
-    <% if (day === 30) { %>
-      <% month = month + 1; %>
-      <% day = 1; %>
-    <% }; %>
-  <% } else { %>
-      <% if (day === 29) { %>
-        <% month = month + 1; %>
-        <% day = 1; %>
-      <% }; %>
-  <% } %>
-<% } else if (month === 4 || month === 6 || month === 9 || month === 11) { %>
-  <% if (day === 31) { %>
-    <% month = month + 1; %>
-    <% day = 1; %>
-  <% }; %>
-<% } else { %>
-  <% if (day === 32) { %>
-    <% month = month + 1; %>
-    <% day = 1; %>
-  <% }; %>
-<% }; %>
-<% if (month <= 9 ) { %>
-  <% month = '0' + month; %>
-<% };%>
-<% if (day <= 9 ) { %>
-  <% day = '0' + day; %>
-<% };%>
-<label>Release Date
-  <input type="date" name="release" value="<%= year %>-<%= month %>-<%= day %>" required>
-</label>
-```
-
 ## To Add:
 
 1. Including '$' dollar sign in the input fields for the New and Edit pages.
