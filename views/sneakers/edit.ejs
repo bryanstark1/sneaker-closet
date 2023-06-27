@@ -18,19 +18,47 @@
   <label>Colorway
     <input type="text" name="color" placeholder="Color Combination" value="<%= sneaker.color %>" required>
   </label>
-  <% const year = sneaker.release.getFullYear(); %>
-  <% let month = sneaker.release.getMonth(); %>
-  <% if (month <= 8 ) { %>
-    <% month = ('0' + (month + 1)); %>
+  <% let year = sneaker.release.getFullYear(); %>
+  <% let month = sneaker.release.getMonth() + 1; %>
+  <% let day = sneaker.release.getDate() + 1; %>
+  <% if (month === 12) { %>
+    <% if (day === 32) { %>
+      <% month = 1; %>
+      <% day = 1; %>
+      <% year = year + 1; %>
+    <% }; %>
+  <% } else if (month === 2) { %>
+    <% if (year % 4 === 0) { %>
+      <% if (day === 30) { %>
+        <% month = month + 1; %>
+        <% day = 1; %>
+      <% }; %>
+    <% } else { %>
+        <% if (day === 29) { %>
+          <% month = month + 1; %>
+          <% day = 1; %>
+        <% }; %>
+    <% } %>
+  <% } else if (month === 4 || month === 6 || month === 9 || month === 11) { %>
+    <% if (day === 31) { %>
+      <% month = month + 1; %>
+      <% day = 1; %>
+    <% }; %>
   <% } else { %>
-    <% month = (month + 1); %>
+    <% if (day === 32) { %>
+      <% month = month + 1; %>
+      <% day = 1 %>
+    <% }; %>
   <% }; %>
-  <% let day = sneaker.release.getDate(); %>
-  <% if (day <= 8 ) { %>
-    <% day = ('0' + (day + 1)); %>
-  <% } else { %>
-    <% day = (day + 1); %>
-  <% }; %>
+
+  <% if (month <= 9 ) { %>
+    <% month = ('0' + (month)); %>
+  <% };%>
+  <% if (day <= 9 ) { %>
+    <% day = ('0' + (day)); %>
+  <% };%>
+
+
   <label>Release Date
     <input type="date" name="release" value="<%= year %>-<%= month %>-<%= day %>" required>
   </label>
