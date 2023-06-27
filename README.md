@@ -54,7 +54,7 @@ To:
 <% if (month <= 9 ) { %>
   <% month = '0' + month; %>
 <% }; %>
-<% let day = sneaker.release.getDate() + 1; %>
+<% let day = sneaker.release.getDate(); %>
 <% if (day <= 9 ) { %>
   <% day = '0' + day; %>
 <% }; %>
@@ -67,7 +67,7 @@ To:
 ```javascript
 <% let year = sneaker.release.getFullYear(); %>
 <% let month = sneaker.release.getMonth() + 1; %>
-<% let day = sneaker.release.getDate() + 1; %>
+<% let day = sneaker.release.getDate(); %>
 <% if (month === 12) { %>
   <% if (day === 32) { %>
     <% month = 1; %>
@@ -94,14 +94,14 @@ To:
 <% } else { %>
   <% if (day === 32) { %>
     <% month = month + 1; %>
-    <% day = 1 %>
+    <% day = 1; %>
   <% }; %>
 <% }; %>
 <% if (month <= 9 ) { %>
-  <% month = ('0' + (month)); %>
+  <% month = '0' + month; %>
 <% };%>
 <% if (day <= 9 ) { %>
-  <% day = ('0' + (day)); %>
+  <% day = '0' + day; %>
 <% };%>
 <label>Release Date
   <input type="date" name="release" value="<%= year %>-<%= month %>-<%= day %>" required>
